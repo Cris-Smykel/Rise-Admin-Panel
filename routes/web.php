@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\V1\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(["prefix" => "admin"], function () {
+    Route::group(["prefix" => "blog", "controller" => BlogController::class], function () {
+        Route::get("/", "index")->name("blog");
+    });
 });

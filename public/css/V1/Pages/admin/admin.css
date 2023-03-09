@@ -1,0 +1,55 @@
+:root {
+    --header-height: 7rem;
+}
+
+/* TODO: Header starts */
+
+.header {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background: var(--white);
+    border-bottom: 1px solid var(--transparent);
+    box-shadow: 0 1px 10px var(--transparent);
+}
+
+/* FIXME: Header ends */
+
+.main {
+    margin-top: var(--header-height);
+}
+
+.open-menu {
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    cursor: pointer;
+}
+
+.open-menu.active {
+    gap: 0;
+}
+
+.open-menu .menu__bar {
+    width: 4rem;
+    height: 4px;
+    border-radius: 1rem;
+    background: var(--grey);
+    transition: all .3s ease-out;
+}
+
+.open-menu.active .menu__bar:first-of-type,
+.open-menu.active .menu__bar:last-of-type {
+    width: 2rem;
+}
+
+.open-menu.active .menu__bar:first-of-type {
+    transform: rotate(335deg);
+}
+
+.open-menu.active .menu__bar:last-of-type {
+    transform: rotate(-335deg);
+}
