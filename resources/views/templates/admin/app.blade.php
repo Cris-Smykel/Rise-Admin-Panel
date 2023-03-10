@@ -30,6 +30,8 @@
 
     @endisset
 
+    <script src="https://kit.fontawesome.com/67f918e73f.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>

@@ -4,6 +4,8 @@
 
 @include("templates.admin.header")
 
+@include("templates.admin.aside")
+
 <main class="main">
 
     <section>

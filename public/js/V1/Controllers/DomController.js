@@ -10,7 +10,7 @@ export class DomController {
     }
 
     addClass(elements, className) {
-        if (elements instanceof NodeList) {
+        if (Array.isArray(elements)) {
             elements.forEach((element) => {
                 element.classList.add(className);
             });
@@ -22,7 +22,7 @@ export class DomController {
     }
 
     removeClass(elements, className) {
-        if (elements instanceof NodeList) {
+        if (Array.isArray(elements)) {
             elements.forEach((element) => {
                 element.classList.remove(className);
             });

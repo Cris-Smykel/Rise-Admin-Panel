@@ -1,13 +1,19 @@
 :root {
     --header-height: 7rem;
+    --header-left-active: 10rem;
 }
 
-/* TODO: Header starts */
+/* TODO: Header and aside starts */
+
+.header,
+.aside {
+    position: fixed;
+    top: 0;
+    transition: all .2s ease-out;
+}
 
 .header {
     z-index: 10;
-    position: fixed;
-    top: 0;
     left: 0;
     right: 0;
     height: var(--header-height);
@@ -16,7 +22,42 @@
     box-shadow: 0 1px 10px var(--transparent);
 }
 
-/* FIXME: Header ends */
+.header.active {
+    left: var(--header-left-active);
+}
+
+.aside {
+    z-index: 5;
+    left: calc(-100vw - 10rem);
+    width: 100vw;
+    height: 100vh;
+    background: var(--primary);
+}
+
+.aside.active {
+    left: 0;
+}
+
+.aside-logo-container {
+    height: var(--header-height);
+    width: var(--header-left-active);
+}
+
+.aside-logo-container img {
+    width: calc(var(--header-left-active) - 2rem);
+}
+
+.aside-anchor.active,
+.aside-anchor:hover {
+    background: #673BB7;
+}
+
+.aside-anchor.active .anchor-info,
+.aside-anchor:hover .anchor-info {
+    color: var(--white);
+}
+
+/* FIXME: Header and aside ends */
 
 .main {
     margin-top: var(--header-height);
@@ -52,4 +93,95 @@
 
 .open-menu.active .menu__bar:last-of-type {
     transform: rotate(-335deg);
+}
+
+@media screen and (min-width: 320px) {
+
+    :root {
+        --header-left-active: 12rem;
+    }
+    
+}
+
+@media screen and (min-width: 450px) {
+
+    :root {
+        --header-left-active: 20rem;
+    }
+
+    .aside-logo-container img {
+        width: 10rem;
+    }
+    
+}
+
+@media screen and (min-width: 1280px) {
+
+    :root {
+        --aside-no-active-width: 8rem;
+    }
+
+    .aside {
+        width: var(--aside-no-active-width);
+        left: 0;
+    }
+
+    .header {
+        left: var(--aside-no-active-width);
+    }
+
+    .aside.active {
+        width: var(--header-left-active);
+    } 
+
+    .aside-hide-on-no-active {
+        display: none;
+    }   
+
+    .aside.active .aside-hide-on-no-active {
+        display: initial;
+    }
+
+    .aside-anchor i {
+        font-size: 3rem;
+    }
+
+    .aside.active .aside-anchor i {
+        font-size: 2rem;
+    }
+
+    .aside-anchor {
+        justify-content: center;
+    }
+
+    .aside.active .aside-anchor {
+        justify-content: initial;
+    }
+
+    .aside-logo-container img {
+        width: calc(var(--aside-no-active-width) - 2rem);
+    }
+
+    .aside.active .aside-logo-container img {
+        width: 10rem;
+    }
+
+    .aside-logo-container {
+        width: 100%;
+    }
+    
+    .aside.active .aside-logo-container {
+        justify-content: initial;
+        padding-left: 1.5rem;
+    }
+    
+    .main {
+        margin-left: var(--aside-no-active-width);
+        transition: all .2s ease-out;
+    }
+
+    .main.active {
+        margin-left: var(--header-left-active);
+    }
+    
 }
