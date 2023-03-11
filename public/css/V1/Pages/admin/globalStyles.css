@@ -43,6 +43,8 @@ ul, li {
     --grey: #6c757d;
     --dark-grey: #343a40;
     --white-gray: #BDBDC7;
+    --purple: #673BB7;
+    --black-transparent: rgba(0, 0, 0, 0.6);
 }
 
 /* TODO: Flex box classes */
@@ -240,6 +242,39 @@ ul, li {
 
 .pointer {
     cursor: pointer;
+}
+
+.loader-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    background: var(--black-transparent);
+}
+
+.loader {
+    border: 1.3rem solid var(--white);
+    border-top: 1.3rem solid var(--purple);
+    border-radius: 100%;
+    width: 8rem;
+    height: 8rem;
+    animation: spin 1.5s linear infinite;
+}
+  
+@keyframes spin {
+
+    0% { 
+        transform: rotate(0deg); 
+    }
+
+    100% { 
+        transform: rotate(360deg);
+    }
 }
 
 @media screen and (min-width: 320px) {

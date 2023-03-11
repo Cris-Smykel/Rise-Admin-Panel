@@ -49,7 +49,7 @@
 
 .aside-anchor.active,
 .aside-anchor:hover {
-    background: #673BB7;
+    background: var(--purple);
 }
 
 .aside-anchor.active .anchor-info,
@@ -61,6 +61,8 @@
 
 .main {
     margin-top: var(--header-height);
+    position: relative;
+    min-height: calc(100vh - var(--header-height));
 }
 
 .open-menu {

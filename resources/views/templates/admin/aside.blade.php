@@ -27,7 +27,8 @@
 
                         <li>
 
-                            <a href="#" class="padding-1-5 active flex-items-center gap-1 aside-anchor">
+                            <a href="{{ route('blog') }}"
+                                class="padding-1-5 {{ isset($isBlog) ? 'active' : '' }} flex-items-center gap-1 aside-anchor">
                                 <i class="fas fa-rss anchor-info font-size-2 color-grey"></i>
                                 <mark
                                     class="color-grey white-space-nowrap anchor-info aside-hide-on-no-active font-size-1-6 font-semibold">Blog</mark>
@@ -37,7 +38,8 @@
 
                         <li>
 
-                            <a href="#" class="padding-1-5 flex-items-center gap-1 aside-anchor">
+                            <a href="{{ route('products') }}"
+                                class="{{ isset($isProducts) ? 'active' : '' }} padding-1-5 flex-items-center gap-1 aside-anchor">
                                 <i class="fas fa-cart-shopping anchor-info font-size-2 color-grey"></i>
                                 <mark
                                     class="color-grey white-space-nowrap anchor-info aside-hide-on-no-active font-size-1-6 font-semibold">Produtos</mark>
@@ -66,7 +68,8 @@
 
                         <li>
 
-                            <a href="#" class="padding-1-5 flex-items-center gap-1 aside-anchor">
+                            <a href="{{ route('newsletter') }}" class="{{ isset($isNewsletter
+                                ) ? 'active' : '' }} padding-1-5 flex-items-center gap-1 aside-anchor">
                                 <i class="fas fa-envelope anchor-info font-size-2 color-grey"></i>
                                 <mark
                                     class="color-grey white-space-nowrap anchor-info aside-hide-on-no-active font-size-1-6 font-semibold">Newsletter</mark>
@@ -76,7 +79,8 @@
 
                         <li>
 
-                            <a href="#" class="padding-1-5 flex-items-center gap-1 aside-anchor">
+                            <a href="{{ route('contact') }}"
+                                class="{{ isset($isContact) ? 'active' : '' }} padding-1-5 flex-items-center gap-1 aside-anchor">
                                 <i class="fas fa-message anchor-info font-size-2 color-grey"></i>
                                 <mark
                                     class="color-grey white-space-nowrap anchor-info aside-hide-on-no-active font-size-1-6 font-semibold">Contato</mark>

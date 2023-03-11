@@ -12,7 +12,11 @@ const stylesHandler = isProduction
 
 const config = {
     entry: {
+        main: "./public/js/V1/Pages/admin/main.js",
         blog: "./public/js/V1/Pages/admin/blog.js",
+        products: "./public/js/V1/Pages/admin/products.js",
+        newsletter: "./public/js/V1/Pages/admin/newsletter.js",
+        contact: "./public/js/V1/Pages/admin/contact.js",
     },
     output: {
         path: path.resolve(__dirname, "./public/js/V1/Bundles"),

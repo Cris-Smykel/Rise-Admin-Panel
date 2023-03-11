@@ -5,7 +5,7 @@ namespace App\Http\Controllers\V1;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class ProductsController extends Controller
 {
     /**
      * @return View 
@@ -14,13 +14,13 @@ class BlogController extends Controller
     public function index()
     {
         $sendToView = [
-            "isBlog" => true,
-            "pageTitle" => "Admin - Meus Posts",
+            "isProducts" => true,
+            "pageTitle" => "Admin - Meus Produtos",
             "scripts" => $this->getScripts(),
             "styles" => $this->getStyles(),
         ];
 
-        return view("pages.admin.blog.index", $sendToView);
+        return view("pages.admin.products.index", $sendToView);
     }
 
     /**
@@ -31,7 +31,7 @@ class BlogController extends Controller
     {
         return [
             "mainBundle" => asset("js/V1/Bundles/main.bundle.js"),
-            "blogBundle" => asset("js/V1/Bundles/blog.bundle.js"),
+            "productsBundle" => asset("js/V1/Bundles/products.bundle.js"),
         ];
     }
 
